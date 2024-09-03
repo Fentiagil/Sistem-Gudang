@@ -16,7 +16,7 @@ Proyek ini adalah aplikasi manajemen gudang berbasis web yang dibangun menggunak
 Pastikan Anda telah menginstal software berikut di sistem Anda:
 
 - [PHP](https://www.php.net/downloads) (versi 8.1 atau lebih baru)
-- [Laravel] (versi 10)
+- [Laravel](https://laravel.com) (versi 10)
 - [Composer](https://getcomposer.org/download/) (untuk mengelola dependencies PHP)
 - [MySQL](https://dev.mysql.com/downloads/) atau database lainnya yang didukung Laravel
 
