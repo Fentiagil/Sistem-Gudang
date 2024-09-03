@@ -7,60 +7,74 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Sistem Gudang
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Proyek ini adalah aplikasi manajemen gudang berbasis web yang dibangun menggunakan Laravel 10. Aplikasi ini menyediakan fitur untuk mengelola pengguna, barang, dan mutasi barang dalam gudang. API yang disediakan menggunakan autentikasi token (Bearer Token) dan dapat digunakan untuk operasi CRUD pada model.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Prasyarat
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Pastikan Anda telah menginstal software berikut di sistem Anda:
 
-## Learning Laravel
+- [PHP](https://www.php.net/downloads) (versi 8.1 atau lebih baru)
+- [Laravel] (versi 10)
+- [Composer](https://getcomposer.org/download/) (untuk mengelola dependencies PHP)
+- [MySQL](https://dev.mysql.com/downloads/) atau database lainnya yang didukung Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Instalasi
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Ikuti langkah-langkah di bawah ini untuk menginstal dan menjalankan proyek di lingkungan lokal Anda.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1. Clone Repository
 
-## Laravel Sponsors
+Clone repository dari GitHub ke komputer lokal Anda:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+bash
+git clone https://github.com/Fentiagil/Sistem-Gudang.git
+cd Sistem-Gudang
 
-### Premium Partners
+### 2. Install Dependensi Composer
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Setelah berada di direktori proyek anda. Kemudian, install semua dependensi Laravel menggunakan Composer:
 
-## Contributing
+composer install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Menyalin File .env dan Konfigurasi
 
-## Code of Conduct
+Laravel menggunakan file .env untuk konfigurasi lingkungan. Jika file .env tidak ada di repository, Anda bisa menyalin file contoh .env.example:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+cp .env.example .env
 
-## Security Vulnerabilities
+### 4. Mengatur Kunci Aplikasi
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Setelah menyalin file .env, Anda perlu mengatur kunci aplikasi Laravel menggunakan Artisan:
 
-## License
+php artisan key:generate
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 5. Set Up Database
+
+Edit file .env untuk mengonfigurasi pengaturan database Anda. Pastikan namanya sama.
+
+### 6. Mengimpor File Database
+
+Anda dapat mengimpor database berformat ".sql" ke dalam MySQL atau database yang Anda gunakan:
+
+1. Buka phpMyAdmin atau gunakan MySQL command line.
+2. Buat database baru sesuai dengan nama yang Anda masukkan di file .env.
+3. Import file .sql ke dalam database yang baru saja dibuat.
+
+### 7. Menjalankan Migrasi
+
+Proyek ini menggunakan migration untuk membuat dan mengisi tabel database, Anda dapat menjalankannya dengan perintah:
+
+php artisan migrate 
+
+### 8. Jalankan Server Lokal
+
+Anda dapat menjalankan server lokal menggunakan perintah Artisan Laravel: 
+
+php artisan serve
+
+
+## Link Postman
+
+https://documenter.getpostman.com/view/25409723/2sAXjM4XY4 
